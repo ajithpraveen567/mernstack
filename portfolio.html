@@ -8,12 +8,37 @@
     <style>
         /* Global Styles */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #121212, #1f1f1f);
-            color: #fff;
+            background: black;
+            color: #00ff6a;
             overflow-x: hidden;
+        }
+
+        /* Moving Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 106, 0.2) 10%, transparent 60%), 
+                        radial-gradient(circle, rgba(0, 255, 106, 0.1) 20%, transparent 80%);
+            background-size: 10% 10%, 15% 15%;
+            animation: moveBackground 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0, 50% 50%;
+            }
+            100% {
+                background-position: 100% 100%, 0 0;
+            }
         }
 
         /* Smooth Scroll */
@@ -23,7 +48,7 @@
 
         /* Header */
         .header {
-            background: linear-gradient(to right, #2e2e2e, #1f1f1f);
+            background: black;
             padding: 20px 50px;
             display: flex;
             justify-content: space-between;
@@ -31,14 +56,12 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 255, 106, 0.5);
         }
 
         .header h1 {
             font-size: 2rem;
-            background: linear-gradient(to right, #ff5e57, #00e0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #00ff6a;
             cursor: pointer;
             transition: transform 0.3s;
         }
@@ -55,17 +78,17 @@
         .nav a {
             font-size: 1rem;
             font-weight: bold;
-            color: #d9d9d9;
+            color: #00ff6a;
+            text-decoration: none;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background 0.3s, transform 0.3s;
             cursor: pointer;
-            text-decoration: none;
         }
 
         .nav a:hover {
-            background: linear-gradient(to right, #ffaf00, #00e0ff);
-            color: #121212;
+            background: #00ff6a;
+            color: black;
             transform: scale(1.1);
         }
 
@@ -75,7 +98,6 @@
             align-items: center;
             justify-content: space-between;
             padding: 100px 50px;
-            background: linear-gradient(to bottom, #1f1f1f, #2e2e2e);
             animation: fadeIn 2s ease-out;
         }
 
@@ -86,21 +108,20 @@
         .hero-content h2 {
             font-size: 3rem;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #ff5e57, #00e0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #e3e9e6;
         }
 
         .hero-content p {
             font-size: 1.2rem;
             line-height: 1.8;
             margin-bottom: 30px;
+            
         }
 
         .hero img {
             max-width: 40%;
             border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(246, 249, 247, 0.5);
             transform: rotate(15deg);
             transition: transform 0.5s;
         }
@@ -119,7 +140,7 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
-            color: #ffaf00;
+            color: #fdfefe;
         }
 
         .section p {
@@ -140,11 +161,11 @@
         }
 
         .skill {
-            background: linear-gradient(to right, #444, #222);
+            background: #121212;
             padding: 20px;
             border-radius: 10px;
-            color: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            color: #00ff6a;
+            box-shadow: 0 5px 15px rgba(0, 255, 106, 0.5);
             transition: transform 0.3s, background 0.3s;
             text-align: center;
             width: 120px;
@@ -152,8 +173,8 @@
 
         .skill:hover {
             transform: scale(1.1);
-            background: linear-gradient(to right, #ff5e57, #00e0ff);
-            color: #121212;
+            background: #00ff6a;
+            color: black;
         }
 
         .skill img {
@@ -161,23 +182,23 @@
             height: 60px;
             margin-bottom: 10px;
         }
+    
 
         /* Footer */
         .footer {
             padding: 20px;
             text-align: center;
-            background: linear-gradient(to right, #2e2e2e, #1f1f1f);
-            color: #b3b3b3;
-            transition: background 0.3s;
+            background: black;
+            color: #00ff6a;
         }
 
         .footer a {
-            color: #fff;
+            color: #00ff6a;
             text-decoration: none;
         }
 
         .footer a:hover {
-            color: #ffaf00;
+            color: white;
         }
 
         /* Animations */
